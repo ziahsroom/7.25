@@ -1,250 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2005 Catalog - $7.25 Net Art Project</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=VT323&display=swap" rel="stylesheet">
-  <script src="hover.js" defer></script>
-
-  <style>
-    body {
-      background-color: #f4f3ec;
-      color: #111;
-      margin: 0;
-      padding: 0;
-      font-family: 'VT323', monospace;
-      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-      position: relative;
-    }
-
-    header {
-      font-size: 2.5rem;
-      text-align: center;
-      padding: 30px 20px 10px;
-      color: #000;
-      font-family: 'VT323', monospace;
-      letter-spacing: 1px;
-    }
-
-    .wage-line {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-top: -10px;
-      color: #333;
-      text-shadow: 1px 1px #fff;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 40px;
-      background-color: #f4f1ec;
-      border-top: 1px solid #aaa;
-    }
-
-    nav a {
-      color: #000;
-      text-decoration: none;
-      font-size: 1rem;
-      border: 1px solid #555;
-      padding: 8px 16px;
-      border-radius: 3px;
-      font-family: 'VT323', monospace;
-      background-color: #fff;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #000;
-      color: #fff;
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-auto-flow: dense;
-      gap: 30px;
-      padding: 60px 40px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .catalog-item {
-      background: white;
-      border: 1px solid #ccc;
-      padding: 10px;
-      box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-      transform: rotate(-2deg);
-      transition: transform 0.2s ease;
-      position: relative;
-    }
-
-    .catalog-item:nth-child(even) {
-      transform: rotate(2deg);
-    }
-
-    .catalog-item:hover {
-      transform: scale(1.05) rotate(0deg);
-      z-index: 10;
-    }
-
-    .catalog-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .price-tag {
-      font-family: 'Gloria Hallelujah', cursive;
-      font-size: 1.1rem;
-      color: #000;
-      background-color: transparent;
-      margin-top: 5px;
-      display: block;
-    }
-
-    .label {
-      font-family: 'Gloria Hallelujah', cursive;
-      font-size: 0.9rem;
-      background-color: #ffff66;
-      padding: 2px 6px;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      transform: rotate(-8deg);
-      border: 1px dashed #111;
-      color: #000;
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 22%, 24%, 55% {
-        opacity: 0.3;
-      }
-    }
-
-    .span-2x2 {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    .span-2x1 {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-
-    .span-1x2 {
-      grid-column: span 1;
-      grid-row: span 2;
-    }
-
-    .footer-blurb {
-      font-family: 'Gloria Hallelujah', cursive;
-      font-size: 1rem;
-      max-width: 700px;
-      margin: 40px auto 80px;
-      color: #111;
-      text-align: center;
-      background-color: #fff8dc;
-      padding: 20px;
-      border: 1px dashed #999;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-      transform: rotate(-1deg);
-    }
-
-    .page-number {
-      position: fixed;
-      bottom: 10px;
-      right: 20px;
-      font-size: 0.8rem;
-      font-family: 'VT323', monospace;
-      color: #888;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .grain-overlay {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background-image: url('https://www.transparenttextures.com/patterns/noise.png');
-      opacity: 0.1;
-      z-index: 9999;
-    }
-  </style>
+  <title>2005 Catalog - $5.15 Net Art Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <audio autoplay loop muted>
-    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Ketsa/Ringtones/Ketsa_-_Ringtone_7.mp3" type="audio/mp3">
-  </audio>
-
   <header>
     <h1>$5.15 (2005)</h1>
-    <p class="wage-line">The lowest we can pay you is $5.15/hr, you might be able to make that work.</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="2025.html">$7.25 Catalog (2025)</a>
-    </nav>
+    <p class="tagline">“The lowest we can pay you is $5.15/hr, you might be able to make that work.”</p>
   </header>
 
   <main class="catalog-grid">
     <div class="catalog-item span-2x2">
-      <img src="Images/jeans.jpg" alt="Jeans" />
-      <span class="label">HOT</span>
-      <span class="price-tag">$7$7$7$7$7$7$7$7$7$7$7$7$</span>
+      <div class="text-fill">
+        <span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span>
+        <span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span>
+        <span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span><span>FRESH TEE</span>
+      </div>
+      <div class="item-price">$5.99</div>
     </div>
 
     <div class="catalog-item span-1x2">
-      <img src="https://via.placeholder.com/300x600" alt="Tall Shoe" />
-      <span class="label">🔥</span>
-      <span class="price-tag">$39.99</span>
+      <div class="text-fill">
+        <span>GRILLZ CHARM</span><span>GRILLZ CHARM</span><span>GRILLZ CHARM</span>
+        <span>GRILLZ CHARM</span><span>GRILLZ CHARM</span><span>GRILLZ CHARM</span>
+      </div>
+      <div class="item-price">$14.99</div>
+    </div>
+
+    <div class="catalog-item">
+      <div class="text-fill">
+        <span>BOULEVARD HOODIE</span><span>BOULEVARD HOODIE</span><span>BOULEVARD HOODIE</span>
+      </div>
+      <div class="item-price">$19.99</div>
     </div>
 
     <div class="catalog-item span-2x1">
-      <img src="https://via.placeholder.com/600x300" alt="Wide Fit" />
-      <span class="label">Limited</span>
-      <span class="price-tag">$89.99</span>
+      <div class="text-fill">
+        <span>LOW-TOP KICKS</span><span>LOW-TOP KICKS</span><span>LOW-TOP KICKS</span>
+        <span>LOW-TOP KICKS</span>
+      </div>
+      <div class="item-price">$34.50</div>
     </div>
 
     <div class="catalog-item">
-      <img src="https://via.placeholder.com/300x300" alt="Classic Box" />
-      <span class="label">Throwback</span>
-      <span class="price-tag">$49.99</span>
-    </div>
-
-    <div class="catalog-item span-1x2">
-      <img src="https://via.placeholder.com/300x600" alt="Tall Skater" />
-      <span class="label">New Drop</span>
-      <span class="price-tag">$29.99</span>
+      <div class="text-fill">
+        <span>RAZOR CHAIN</span><span>RAZOR CHAIN</span><span>RAZOR CHAIN</span>
+      </div>
+      <div class="item-price">$12.00</div>
     </div>
 
     <div class="catalog-item">
-      <img src="https://via.placeholder.com/300x200" alt="Mixtape Pack" />
-      <span class="label">🔥🔥🔥</span>
-      <span class="price-tag">$19.99</span>
+      <div class="text-fill">
+        <span>CLASSIC DENIM</span><span>CLASSIC DENIM</span><span>CLASSIC DENIM</span>
+      </div>
+      <div class="item-price">$27.25</div>
+    </div>
+
+    <div class="catalog-item">
+      <div class="text-fill">
+        <span>VINYL</span><span>VINYL</span><span>VINYL</span><span>VINYL</span>
+      </div>
+      <div class="item-price">$15.00</div>
+    </div>
+
+    <div class="catalog-item">
+      <div class="text-fill">
+        <span>EGGS</span><span>EGGS</span><span>EGGS</span><span>EGGS</span>
+      </div>
+      <div class="item-price">$6.99</div>
     </div>
   </main>
 
-  <section class="footer-blurb">
-    <p>
-      This catalog ain't just about kicks — it's about survival. $5.15 barely got you by in 2005, but you still needed to look fresh.
-      Every tag, label, and grainy pixel in this spread reflects a culture that made something out of nothing.
-    </p>
-  </section>
+  <footer>
+    From the city to your screen — the culture doesn’t just adapt, it evolves. Welcome to the $5.15 era.
+  </footer>
 
-  <div class="grain-overlay"></div>
-  <div class="page-number">page 37</div>
+  <script>
+    const items = document.querySelectorAll('.catalog-item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('selected');
+      });
+    });
+  </script>
 </body>
 </html>
+
+
