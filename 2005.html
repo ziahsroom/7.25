@@ -35,7 +35,7 @@
       <div class="text-fill">
         <span>BOULEVARD HOODIE</span><span>BOULEVARD HOODIE</span><span>BOULEVARD HOODIE</span>
       </div>
-      <div class="item-price">$19.99</div>
+      <div class="item-price">$10.99</div>
     </div>
 
     <div class="catalog-item span-2x1">
@@ -43,7 +43,7 @@
         <span>LOW-TOP KICKS</span><span>LOW-TOP KICKS</span><span>LOW-TOP KICKS</span>
         <span>LOW-TOP KICKS</span>
       </div>
-      <div class="item-price">$34.50</div>
+      <div class="item-price">$20</div>
     </div>
 
     <div class="catalog-item">
@@ -57,26 +57,33 @@
       <div class="text-fill">
         <span>CLASSIC DENIM</span><span>CLASSIC DENIM</span><span>CLASSIC DENIM</span>
       </div>
-      <div class="item-price">$27.25</div>
+      <div class="item-price">$15</div>
     </div>
 
     <div class="catalog-item">
       <div class="text-fill">
         <span>VINYL</span><span>VINYL</span><span>VINYL</span><span>VINYL</span>
       </div>
-      <div class="item-price">$15.00</div>
+      <div class="item-price">$3</div>
     </div>
 
     <div class="catalog-item">
       <div class="text-fill">
         <span>EGGS</span><span>EGGS</span><span>EGGS</span><span>EGGS</span>
       </div>
-      <div class="item-price">$6.99</div>
+      <div class="item-price">$1.19</div>
     </div>
+    <div class="catalog-item span-2x1">
+      <div class="text-fill">
+        <span>RENT (1BR MONTHLY)</span><span>RENT (1BR MONTHLY)</span><span>RENT (1BR MONTHLY)</span>
+      </div>
+      <div class="item-price">$600.00</div>
+    </div>
+    
   </main>
 
   <footer>
-    From the city to your screen — the culture doesn’t just adapt, it evolves. Welcome to the $5.15 era.
+    From the city to your screen the culture doesn’t just adapt, it evolves. Welcome to the $5.15 era.
   </footer>
 
   <script>
@@ -87,6 +94,56 @@
       });
     });
   </script>
+  <nav class="nav-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="2025.html">💸 2025 Catalog</a>
+  </nav>
+  
+  <!-- Background Music -->
+<audio id="bg-music" loop>
+  <source src="audio/you-can-do-it-too.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Play Music Button -->
+<button id="play-music" style="
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  background-color: #fdf200;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+">
+  ▶️ Play the 2005 Vibe
+</button>
+<script>
+  const audio = document.getElementById("bg-music");
+  const button = document.getElementById("play-music");
+
+  button.addEventListener("click", () => {
+    audio.volume = 0;
+    audio.play();
+
+    let vol = 0;
+    const fade = setInterval(() => {
+      if (vol < 0.4) {
+        vol += 0.01;
+        audio.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 100);
+
+    button.style.display = "none"; // hide after play
+  });
+</script>
+
+
+
+  
 </body>
 </html>
 

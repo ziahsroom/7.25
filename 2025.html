@@ -1,135 +1,258 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2025 Catalog - $7.25 Net Art Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet">
+  <title>2025 Catalog — $7.25 Net Art Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f3f1ea;
-      font-family: 'Outfit', sans-serif;
-      color: #111;
-      margin: 0;
-      padding: 40px;
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #7f7f7f;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Serif Display', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      line-height: 1.6;
+      text-align: justify;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .tagline {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .catalog-item {
-      background-color: #fff;
-      border: 2px solid #000;
-      padding: 16px;
+      font-size: 5rem;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
       text-align: center;
-      box-shadow: 4px 4px 0 #000;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Subtle Pulse Behind $7.25 */
+    h1::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle, rgba(0,0,0,0.05) 0%, transparent 80%);
+      animation: pulse 6s ease-in-out infinite;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.3;
+      }
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin-bottom: 60px;
+      color: var(--accent);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    section {
+      max-width: 900px;
+      margin-bottom: 60px;
+      border-left: 2px solid var(--text);
+      padding-left: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    section p {
+      font-size: 1.1rem;
+    }
+
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .price-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      border-bottom: 1px dashed var(--accent);
+      padding: 8px 0;
       position: relative;
     }
 
-    .catalog-item img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 12px;
-      border: 1px solid #000;
+    .price-list li::after {
+      content: attr(data-2005);
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 3px;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
     }
 
-    .item-label {
-      font-size: 0.9rem;
-      color: #000;
-      background-color: #e0e0e0;
-      padding: 4px 8px;
-      display: inline-block;
-      margin-bottom: 6px;
+    .price-list li:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .price-list span:first-child {
       font-weight: bold;
-      border: 1px solid #333;
     }
 
-    .item-price {
-      font-size: 1.1rem;
-      font-weight: 600;
-      background-color: #ffed00;
-      padding: 6px 10px;
-      border: 1px solid #000;
-      display: inline-block;
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text);
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover {
+      opacity: 0.5;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .lead, section p {
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      .price-list li {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>$7.25 (2025)</h1>
-    <p class="tagline">What you need just tripled in price, but you’re not making much more.</p>
-  </header>
 
-  <main class="catalog-grid">
-    <div class="catalog-item">
-      <img src="images/2025-item1.jpg" alt="Item 1">
-      <div class="item-label">MODERN TEE</div>
-      <div class="item-price">$95</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item2.jpg" alt="Item 2">
-      <div class="item-label">UTILITY BAG</div>
-      <div class="item-price">$120</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item3.jpg" alt="Item 3">
-      <div class="item-label">LUX HOODIE</div>
-      <div class="item-price">$180</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item4.jpg" alt="Item 4">
-      <div class="item-label">SKELETON FIT</div>
-      <div class="item-price">$250</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item5.jpg" alt="Item 5">
-      <div class="item-label">GRAFFI TOTE</div>
-      <div class="item-price">$90</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item6.jpg" alt="Item 6">
-      <div class="item-label">REWORKED JEANS</div>
-      <div class="item-price">$140</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item7.jpg" alt="Item 7">
-      <div class="item-label">FRAGMENT PATCH</div>
-      <div class="item-price">$45</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item8.jpg" alt="Item 8">
-      <div class="item-label">OVERSIZED VEST</div>
-      <div class="item-price">$160</div>
-    </div>
-    <div class="catalog-item">
-      <img src="images/2025-item9.jpg" alt="Item 9">
-      <div class="item-label">LIMITED CAP</div>
-      <div class="item-price">$65</div>
-    </div>
-  </main>
+  <h1>$7.25 / 2025</h1>
+
+  <p class="lead">
+    A sleek catalog of survival.  
+    The minimum wage hasn’t moved much, but everything else has.
+  </p>
+
+  <section class="reveal">
+    <h2>Catalog of Cost</h2>
+    <p>
+      Essentials, luxuries, cultural lifelines. A snapshot of what survival costs in 2025.
+    </p>
+    <ul class="price-list">
+      <li data-2005="Was $28"><span>Jeans</span> <span>$78</span></li>
+      <li data-2005="Was $1.59"><span>Eggs (1 dozen)</span> <span>$6.49</span></li>
+      <li data-2005="Was $900/mo"><span>Keys (Rent, 1BR/month)</span> <span>$2,175</span></li>
+      <li data-2005="Was $14,000"><span>Cars (Used, avg.)</span> <span>$28,000</span></li>
+      <li data-2005="Was $6.99"><span>Fried Chicken (3-piece combo)</span> <span>$13.25</span></li>
+      <li data-2005="Was $45"><span>Hoodies</span> <span>$85</span></li>
+      <li data-2005="Was $0.99"><span>Candy Bars</span> <span>$2.50</span></li>
+      <li data-2005="Was $60"><span>Shoes (Sneakers)</span> <span>$120</span></li>
+      <li data-2005="Was $20"><span>Clippers (Haircut)</span> <span>$50</span></li>
+      <li data-2005="Was $14"><span>Records</span> <span>$29</span></li>
+      <li data-2005="Was $499"><span>Phones (Smartphone)</span> <span>$1,099</span></li>
+      <li data-2005="Was $800"><span>Computers (Laptop)</span> <span>$1,300</span></li>
+      <li data-2005="Was $45"><span>Concert Tickets</span> <span>$215</span></li>
+      <li data-2005="Was $3.99"><span>Water (Case of 24)</span> <span>$7.99</span></li>
+      <li data-2005="Was $9.99"><span>Albums / CDs</span> <span>$15.99</span></li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Modernized Design, Minimal Expression</h2>
+    <p>
+      In contrast to the chaotic textures of early internet design, this page is restrained.  
+      It’s about space. Intention. Editorial elegance.  
+      The absence of imagery emphasizes how much is left unsaid and how far we still have to go.
+    </p>
+  </section>
+
+  <footer>
+    <p><a href="2005.html">← View the 2005 Catalog</a></p>
+    <p>&copy; 2025 The $7.25 Net Art Project</p>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+
+    const scrollHandler = () => {
+      for (let el of reveals) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          el.classList.add('visible');
+        }
+      }
+    };
+
+    document.addEventListener('scroll', scrollHandler);
+    window.addEventListener('load', scrollHandler);
+  </script>
 </body>
 </html>
+
+
 
 
